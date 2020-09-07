@@ -11,6 +11,7 @@ body {
 
 .logo-box {
   width: 80%;
+  max-width: 900px;
   margin: auto;
   background-color: #E0E0E0;
 }
