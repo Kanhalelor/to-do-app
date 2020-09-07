@@ -1,0 +1,163 @@
+* {
+  box-sizing: border-box;
+  transition: .1s ease-in-out;
+  font-family: 'Nunito', sans-serif;
+}
+
+body {    
+  background-color: #eef;
+  font-size: 12px;
+}
+
+.logo-box {
+  width: 80%;
+  margin: auto;
+  background-color: #E0E0E0;
+}
+
+.wrapper {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: 80%;
+  max-width: 900px;
+  margin:0 auto;
+  padding: .5rem;
+  background-color: #e0e0e0;
+}
+
+.logo {
+  font-weight: 700;
+  text-align: center;
+  color: #52bab3;
+  text-shadow: 2px -2px 1px #FFF;
+}
+
+input[type="text"] {
+  width: 50%;
+}
+
+input[type="text"], .btn-primary {
+  padding: .5rem;
+  border-style: none;
+  background-color: #eee;
+}
+
+.btn-primary {
+  background-color: #52bab3;
+  outline: none;
+}
+
+input[type="text"]:focus {
+  outline: none;
+  border-bottom: 2px solid #52bab3;
+}
+
+.btn-primary:hover {
+  background-color: #eee;
+  border: 2px solid #52bab3;
+  color: #000;
+  cursor: pointer;
+  font-weight: 900;
+}
+
+
+.task-menu, .input-box {
+  width: 95%;
+  margin: 0 auto;
+  margin-top: 2em;
+}
+
+.dt {
+  background-color: #fff;
+  margin: auto;
+  color: #52bab3;
+  font-size: 20px;
+  font-weight: 600;
+  padding: 0 6px;
+  border-top: 4px solid #acc;
+}
+
+.item-list {
+  border-top: 1px solid #acc;
+}
+.item-list:not(first-child) > li {
+  margin-top: 6px;
+}
+
+.input-box input[type="text"] {
+  float: left;
+}
+.input-box .btn-primary {
+  float: right;
+}
+
+.task-box {
+  display: inline-block;
+  width: 100%;
+}
+
+.task {
+  float: left;
+  background-color: green;
+  color: #eef;
+  padding: 3px 6px;
+  font-weight: 700;
+}
+
+.remove {
+  border-radius: 10px;
+}
+.check {
+  border-radius: 50%;
+}
+.remove, .check {
+  border: none;
+  width: 30px;
+  padding: 6px 12px;
+  cursor: pointer;
+  outline: none;
+}
+
+.remove:hover {
+  background-color: #e23737;
+  font-weight: 700;
+  color: #fff;
+  transform: scale(1.05);
+}
+.check:hover {
+  border: 1px solid #000;
+  font-weight: 800;
+  color: #000;
+  transform: scale(1.05);
+}
+
+.buttons {
+  float: right;
+}
+
+.buttons > button {
+  padding: 3px 6px;
+  font-weight: 900;
+  margin-left: 18px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+/*=== Utility classess =====*/
+.c {
+  background-color: #84eb84;
+}
+.done {
+  text-decoration: line-through;
+  background-color: #84eb84;
+}
+
+@media only screen and (min-width: 768px) {
+  body {
+    font-size: 16px;
+  }
+}
