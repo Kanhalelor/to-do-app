@@ -10,17 +10,16 @@ dt.innerText = currentTime;
 const addTask = document.getElementById('add-task');
 const container = document.getElementById('container');
 
+// create a list of tasks
+const tasks = [];
+  
 addTask.addEventListener('click', (e) => {
     
   e.preventDefault();
   
   // get the task
   const t = addTask.previousElementSibling.value;
-  
-  // append task to a list of tasks
-  
-  const tasks = [];
-  
+
   tasks.push(t);
   
   // create elements
@@ -33,27 +32,32 @@ addTask.addEventListener('click', (e) => {
   `
   // append elements to the DOM
   container.appendChild(taskBox);
-  
-  // Better way to make an addEventListener
-  container.addEventListener('click', (e) => {
-      if ( e.target.classList.contains('remove') ) {
-          let targetElem = e.target.parentElement.parentElement;
-          targetElem.style.display = 'none';
-      }
-      if ( e.target.classList.contains('check') ) {
-        let completed = e.target.parentElement.previousElementSibling;
-        completed.classList.toggle('done');
-        e.target.classList.toggle('c');
-      }
-  })
+
   // store tasks to local storage
-  setter(tasks);
+  console.log(tasks);
   
   // clear input field
   addTask.previousElementSibling.value = "";
 })
 
+
+// mark and unmark completed tasks
+container.addEventListener('click', (e) => {
+    if ( e.target.classList.contains('remove') ) {
+        let targetElem = e.target.parentElement.parentElement;
+        targetElem.style.display = 'none';
+    }
+    else if ( e.target.classList.contains('check') ) {
+      let completed = e.target.parentElement.previousElementSibling;
+      completed.classList.toggle('done');
+      e.target.classList.toggle('c');
+    }
+})
+
 // store tasks to local storage
-const setter = (task) => {
-  window.localStorage.setItem('Tasks', JSON.stringify(task));
-}
+const setter = localStorage.setItem('Tasks', JSON.stringify(tasks));
+
+// retrive tasks from local storage
+const getter = localStorage.getItem('Tasks');
+
+console.log(JSON.parse(getter));
