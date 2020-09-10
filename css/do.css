@@ -52,17 +52,18 @@ input[type="text"], .btn-primary {
   background-color: #eee;
 }
 .btn-primary {
-  background-color: #52bab3;
+  background-color: #eef;
+  color: #52bab3;
   outline: none;
+  border-radius: 50%;
 }
 input[type="text"]:focus {
   outline: none;
   border-bottom: 2px solid #52bab3;
 }
 .btn-primary:hover {
-  background-color: #eee;
-  border: 2px solid #52bab3;
-  color: #000;
+  background-color: #52bab3;
+  color: #121212;
   cursor: pointer;
   font-weight: 900;
 }
