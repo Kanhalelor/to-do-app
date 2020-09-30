@@ -1,5 +1,3 @@
-// selecting elements
-
 const d = new Date();
 
 const currentTime = d.toDateString();
@@ -19,27 +17,26 @@ addTask.addEventListener('click', (e) => {
   
   // get the task
   const t = addTask.previousElementSibling.value;
-
-  tasks.push(t);
+  if ( t === "" ) {
+      alert("Please type a Task")
+  } else {
+     tasks.push(t);
   
-  // create elements
-  const taskBox = document.createElement('li');
-  taskBox.innerHTML = `
-  <li id="label" class="task-box">
-    <span class="task">${t}</span>
-    <span title="remove task" class="buttons"><button id="checkBtn" title="mark as complete" class="check">&#x2713;</button><button id="remove-task" class="remove">X</span>
-  </li>
-  `
-  // append elements to the DOM
-  container.appendChild(taskBox);
-
-  // store tasks to local storage
-  console.log(tasks);
-  
-  // clear input field
-  addTask.previousElementSibling.value = "";
+    // create elements
+    const taskBox = document.createElement('li');
+    taskBox.innerHTML = `
+    <li id="label" class="task-box">
+        <span class="task">${t}</span>
+        <span title="remove task" class="buttons"><button id="checkBtn" title="mark as complete" class="check">&#x2713;</button><button id="remove-task" class="remove">X</span>
+    </li>
+    `
+    // append elements to the DOM
+    container.appendChild(taskBox);
+    
+    // clear input field
+    addTask.previousElementSibling.value = "";   
+  }
 })
-
 
 // mark and unmark completed tasks
 container.addEventListener('click', (e) => {
